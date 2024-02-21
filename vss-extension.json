@@ -1,0 +1,65 @@
+{
+  "manifestVersion": 1,
+  "id": "binary-scan",
+  "version": "0.0.1",
+  "name": "Binary scan",
+  "publisher": "finite-state",
+  "public": false,
+  "description": "The Finite State binary-scan Azure extension allows you to easily integrate the Finite State Platform into your CI/CD pipelines.",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "screenshots": [
+    {
+      "path": "images/screenshots/pr_comment.png"
+    },
+    {
+      "path": "images/screenshots/pipeline_configuration.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "Marketplace.md"
+    },
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "icons": {
+    "default": "images/service-logo.png"
+  },
+  "files": [
+    {
+      "path": "Tasks/binaryScan"
+    }
+  ],
+  "links": {
+    "getstarted": {
+        "uri": "https://github.com/FiniteStateInc/binary-scan-ado/blob/main/Marketplace.md"
+    },
+    "support": {
+        "uri": "https://finitestate.io/contact/"
+    }
+  },
+  "branding": {
+      "color": "rgb(34, 34, 34)",
+      "theme": "dark"
+  },
+  "contributions": [
+    {
+      "id": "binaryScan",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "Tasks/binaryScan"
+      }
+    }
+  ]
+}

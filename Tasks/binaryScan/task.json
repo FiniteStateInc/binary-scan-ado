@@ -1,0 +1,108 @@
+{
+  "id": "4dab1a3f-7508-4b4e-92ff-4d7a5a653ab8",
+  "name": "Finite-State-Binary-Scan",
+  "friendlyName": "Finite state Binary Scan",
+  "instanceNameFormat": "Finite state binary scan $(fsclientid)",
+  "description": "Upload a binary to the Finite State Platform to conduct a Quick Scan or full analysis.",
+  "author": "Christian Pfarher",
+  "category": "Utility",
+  "visibility": ["Build", "Release"],
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 1
+  },
+  "inputs": [
+    {
+      "name": "finiteStateClientId",
+      "label": "Finite State API client ID",
+      "helpMarkDown": "Finite State API client ID",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "finiteStateSecret",
+      "label": "Finite State API secret",
+      "helpMarkDown": "Finite State API secret",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "finiteStateOrganizationContext",
+      "label": "Finite State Organization Context",
+      "helpMarkDown": "The Organization-Context should have been provided to you by your Finite State representative and looks like xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "assetId",
+      "label": "Asset ID",
+      "helpMarkDown": "Asset ID for the asset that the new asset version will belong to",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "label": "Version",
+      "helpMarkDown": "The name of the asset version that will be created",
+      "required": true,
+      "type": "string"
+    },
+    {
+      "name": "filePath",
+      "label": "File path",
+      "helpMarkDown": "Local path of the file to be uploaded",
+      "required": true,
+      "type": "filePath"
+    },
+    {
+      "name": "quickScan",
+      "label": "Quick scan",
+      "helpMarkDown": "Boolean that uploads the file for quick scan when true. Defaults to true (Quick Scan). For details about the contents of the Quick Scan vs. the Full Scan, please see the API documentation.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": true
+    },
+    {
+      "name": "automaticComment",
+      "label": "Automatic Comment",
+      "helpMarkDown": "Defaults to false. If it is true, it will generate a comment in the PR with the link to the Asset version URL in the Finite State Platform.",
+      "required": false,
+      "type": "boolean",
+      "defaultValue": false
+    },
+    {
+      "name": "businessUnitId",
+      "label": "Business Unit ID",
+      "helpMarkDown": "(optional) ID of the business unit that the asset version will belong to. If not provided, the asset version will adopt the existing business unit of the asset.",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "createdByUserId",
+      "label": "Created By User ID",
+      "helpMarkDown": "(optional) ID of the user to be recorded as the 'Created By User' on the asset version. If not provided, the version will adopt the existing value of the asset.",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "productId",
+      "label": "Product ID",
+      "helpMarkDown": "(optional) ID of the product that the asset version will belong to. If not provided, the existing product for the asset will be used, if applicable.",
+      "required": false,
+      "type": "string"
+    },
+    {
+      "name": "artifactDescription",
+      "label": "Artifact description",
+      "helpMarkDown": "(optional) Description of the artifact. If not provided, the default is 'Firmware Binary'.",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "main.js"
+    }
+  }
+}
