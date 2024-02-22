@@ -34,66 +34,65 @@ By default, the asset version will be assigned the existing values for Business 
 
 ## Set Up Workflow
 
-To start using this Extension, you must [install](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser) using [Azure DevOps Markeplace](https://marketplace.visualstudio.com/items?itemName=christian-azr.binary-scan)
+To start using this Extension, you must [install](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser) it using [Azure DevOps Markeplace](https://marketplace.visualstudio.com/items?itemName=christian-azr.binary-scan).
 
-After is installed, you could use it in your pipeline finding the task in the right Tasks panel:
+After it is installed, you can use it in your pipeline by finding the task in the right Tasks panel:
 
 ![Task install](images/screenshots/task_installation.png)
 
-You could customize the input parameters as you could see in the next image:
+You can customize the input parameters, as you see in the next image:
 
 ![Task configuration](images/screenshots/pipeline_configuration.png)
 
-Although you could write some values directly in the input fields, we recommend to keep secret some sensitive values instead of hardcoded directly in the pipeline yml file. At least you should keep secret this inputs:
-- FiniteState Client ID, 
-- FiniteState Secret ID and 
-- FiniteState Context organization
+Although you can write some values directly in the input fields, we recommend storing some sensitive values as secrets, rather than hardcoding them directly in the pipeline yml file. At minimum, the following values should be stored as secrets:
+- Finite State Client ID, 
+- Finite State Secret ID and 
+- Finite State Context organization
 
 ![Secret values definition](images/screenshots/secret_values.png)
 
-## Generate comment on a PR with the link to upload binary file
-If you want the PR to automatically generate a comment with the link to the results on the Finite State Platform, make sure to give permissions to the azure pipeline token [`System.AccessToken`](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#systemaccesstoken). Then, grant the necessary permissions over the associated Azure Token going to `Project Settings > Repositories > Security tab` as you could see in the follow image:
+## Generate a Comment on a PR with the Link to the Uploaded Binary File
+If you want the extension to automatically generate a PR comment with the link to the results on the Finite State Platform, make sure to give permissions to the azure pipeline token [`System.AccessToken`](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml#systemaccesstoken). Then, grant the necessary permissions to the associated Azure Token by going to `Project Settings > Repositories > Security tab` as you can see in the follow image:
 
 ![Give token permissions](images/screenshots/token_permissions.png)
 
-This allows the action to post the comment in the PR when the `automaticComment` is checked (`true`). After this steps you will get a comment in the PR with the link that points to the binary uploaded fine to FiniteState Platform:
+This allows the action to post the comment in the PR when the `automaticComment` is checked (`true`). After this step, you will get a comment in the PR with a link that points to the binary uploaded in the Finite State Platform:
 
 ![Azure PR automatic comment](images/screenshots/pr_comment.png)
 
 ### Build Policy
-You will need to configure a build policy over your main branch in order to auto start a build process. So on this way, when you did a modification over a branch that has a PR associated, the pipeline will be executed automatically, therefore it will generate the comment using the task configured.
+You will need to configure a build policy over your main branch in order to auto start a build process. This way, when you make a modification to a branch that has a PR associated with it, the pipeline will be executed automatically and generate a comment using the task configured.
 
-To set up a policy you need to go to `Repositories > Branches`. Then click on the three point in your main branch and select Branch policies in the dropdown menu:
+To set up a policy, you need to go to `Repositories > Branches`. Then click on the three point in your main branch and select Branch policies in the dropdown menu:
 
 ![Azure Branch policies](images/screenshots/branch_policies.png)
 
-In the popup save the settings as follow:
+In the popup, save the settings as follow:
 
 ![Azure build policy](images/screenshots/add_build_policy_main.png)
 
-After that you will see a setting similar to this:
+After that, you will see a configuration option similar to this:
 
 ![Azure main policy enabled](images/screenshots/build_policy_main_enabled.png)
 
-From now, on each commit over a branch associated to a PR that is requested to be merge in main branch it will trigger the pipeline execution automatically to execute the Finite State task:
+Going forward, each commit to a branch associated with a PR that is requested to be merge to the main branch will trigger the pipeline execution automatically and execute the Finite State task:
 
 ![Azure auto trigger on PR](images/screenshots/pr_trigger.png)
 
 
-The extension will shows some information/details about the result of the execution:
+The extension will show some information/details about the result of the execution:
 
 ![Azure auto trigger on PR](images/screenshots/azure_log_output.png)
 
 ## Action Debugging
 
-All details pertaining to the execution of the action will be recorded. You can review this information in the workflow execution logs, which is a helpful starting point if you encounter any errors during the action's run.
+All details pertaining to the execution of the extension will be recorded. You can review this information in the workflow execution logs, which is a helpful starting point if you encounter any errors during the extension's run.
 
-If you have any error, we recommend to enable the System diagnostics whe you run the pipeline:
+If you have any errors, we recommend to enabling the System diagnostics whe you run the pipeline:
 
 ![System diagnostics enabled](images/screenshots/pipline_system_diagnostics.png)
 
 
-Example of output when system diagnostics is enabled:
+Example of the output when system diagnostics is enabled:
 
 ![System diagnostics results](images/screenshots/pipline_system_diagnostics_result.png)
-
