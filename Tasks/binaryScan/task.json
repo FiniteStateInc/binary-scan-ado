@@ -1,16 +1,16 @@
 {
   "id": "4dab1a3f-7508-4b4e-92ff-4d7a5a653ab8",
   "name": "Finite-State-Binary-Scan",
-  "friendlyName": "Finite state Binary Scan",
-  "instanceNameFormat": "Finite state binary scan $(fsclientid)",
+  "friendlyName": "Finite State Binary Scan",
+  "instanceNameFormat": "Finite State Binary Scan $(fsclientid)",
   "description": "Upload a binary to the Finite State Platform to conduct a Quick Scan or full analysis.",
-  "author": "Christian Pfarher",
+  "author": "Finite State",
   "category": "Utility",
   "visibility": ["Build", "Release"],
   "version": {
-    "Major": 0,
+    "Major": 1,
     "Minor": 0,
-    "Patch": 2
+    "Patch": 0
   },
   "inputs": [
     {
@@ -51,7 +51,7 @@
     {
       "name": "filePath",
       "label": "File path",
-      "helpMarkDown": "Local path of the file to be uploaded",
+      "helpMarkDown": "Local path for the file to be uploaded",
       "required": true,
       "type": "filePath"
     },
