@@ -34,7 +34,7 @@ By default, the asset version will be assigned the existing values for Business 
 
 ## Set Up Workflow
 
-To start using this Extension, you must [install](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser) it using [Azure DevOps Markeplace](https://marketplace.visualstudio.com/items?itemName=christian-azr.binary-scan).
+To start using this Extension, you must [install](https://learn.microsoft.com/en-us/azure/devops/marketplace/install-extension?view=azure-devops&tabs=browser) it using [Azure DevOps Markeplace](https://marketplace.visualstudio.com/items?itemName=finite-state.binary-scan).
 
 After it is installed, you can use it in your pipeline by finding the task in the right Tasks panel:
 
