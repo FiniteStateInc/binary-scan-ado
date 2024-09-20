@@ -1,6 +1,6 @@
 {
   "name": "binaryscan",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The Finite State binary-scan Azure extension allows you to easily integrate the Finite State Platform into your CI/CD pipelines.",
   "main": "main.js",
   "scripts": {
