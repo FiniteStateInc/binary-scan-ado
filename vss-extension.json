@@ -1,7 +1,7 @@
 {
   "manifestVersion": 1,
   "id": "binary-scan",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "name": "Finite State Binary Scan",
   "publisher": "finite-state",
   "public": true,
