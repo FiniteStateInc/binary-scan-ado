@@ -5,7 +5,7 @@
   "name": "Finite State Binary Scan",
   "publisher": "finite-state",
   "public": true,
-  "description": "The Finite State binary-scan Azure extension allows you to easily integrate the Finite State Platform into your CI/CD pipelines.",
+  "description": "DEPRECATED — replaced by Finite State Analysis (finite-state.finite-state-analysis-extension). This extension is no longer maintained.",
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
