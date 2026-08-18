@@ -1,3 +1,11 @@
+# ⚠️ DEPRECATED — this extension is no longer maintained
+
+## 👉 [Install Finite State Analysis instead](https://marketplace.visualstudio.com/items?itemName=finite-state.finite-state-analysis-extension) 👈
+
+**`binary-scan` has been replaced by [Finite State Analysis](https://marketplace.visualstudio.com/items?itemName=finite-state.finite-state-analysis-extension)**, which covers binary scanning and more. This extension is unpublished from the Marketplace and receives no further updates or support — please switch to the new extension.
+
+---
+
 # [Finite State](https://finitestate.io) `binary-scan` Extension for Azure DevOps
 
 ![Finite state logo](images/screenshots/FS-Logo.png)
